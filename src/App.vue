@@ -1,12 +1,28 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <!-- <router-link to="/">Home</router-link> | -->
+      <!-- <router-link to="/about">About</router-link> -->
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+
+import Vue from 'vue'
+import MintUI from 'mint-ui';
+import 'mint-ui/lib/style.css';
+
+
+
+Vue.use(MintUI);
+// 按需引入部分组件
+
+export default {
+ 
+}
+</script>>
 
 <style lang="scss">
 #app {
