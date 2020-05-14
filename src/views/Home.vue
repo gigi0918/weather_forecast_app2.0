@@ -47,86 +47,41 @@ export default {
   mounted() {
     let self = this;
 
-    axios
-      .get("http://localhost:3000/gigidata")
-      .then(function(response) {
-        //revel
-        self.itemList = response.data;
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    //暫存
+    // axios
+    //   .get("http://localhost:3000/gigidata")
+    //   .then(function(response) {
+    //     //revel
+    //     self.itemList = response.data;
+    //     console.log(response);
+    //   })
+    //   .catch(function(error) {
+    //     console.log(error);
+    //   });
 
+
+    //參考 : https://www.oxxostudio.tw/articles/201905/firebase-firestore.html
+     var ref = db.collection("gigidata").orderBy("time", "asc");
+    
+
+
+      ref.get().then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          console.log(doc.id, doc.data());
+          console.log(doc.data().msg);         
+          self.itemList.unshift({
+          msg: doc.data().msg,
+          time: doc.data().time
+        });
+
+        });
+      });
     //將發文資料存於gigidata
 
     //監聽
-    document.addEventListener("deviceready", onDeviceReady, false);
+    // document.addEventListener("deviceready", onDeviceReady, false);
     //deviceready要先準備好才進行以下
-    function onDeviceReady() {
-      console.log("navigator.geolocation works well");
-
-      // function getWeatherLocation() {
-      //   navigator.geolocation.getCurrentPosition(
-      //     onWeatherSuccess,
-      //     onWeatherError,
-      //     { enableHighAccuracy: true }
-      //   );
-      // }
-
-      // var onWeatherSuccess = function(position) {
-      //   Latitude = position.coords.latitude;
-      //   Longitude = position.coords.longitude;
-
-      //   getWeather(Latitude, Longitude);
-      // };
-
-      // Get weather by using coordinates
-
-      //     function getWeather(latitude, longitude) {
-      //       // Get a free key at http://openweathermap.org/. Replace the "Your_Key_Here" string with that key.
-      //       var OpenWeatherAppKey = "Your_Key_Here";
-
-      //       var queryString =
-      //         "http://api.openweathermap.org/data/2.5/weather?lat=" +
-      //         latitude +
-      //         "&lon=" +
-      //         longitude +
-      //         "&appid=" +
-      //         OpenWeatherAppKey +
-      //         "&units=imperial";
-
-      //       $.getJSON(queryString, function(results) {
-      //         if (results.weather.length) {
-      //           $.getJSON(queryString, function(results) {
-      //             if (results.weather.length) {
-      //               $("#description").text(results.name);
-      //               $("#temp").text(results.main.temp);
-      //               $("#wind").text(results.wind.speed);
-      //               $("#humidity").text(results.main.humidity);
-      //               $("#visibility").text(results.weather[0].main);
-
-      //               var sunriseDate = new Date(results.sys.sunrise);
-      //               $("#sunrise").text(sunriseDate.toLocaleTimeString());
-
-      //               var sunsetDate = new Date(results.sys.sunrise);
-      //               $("#sunset").text(sunsetDate.toLocaleTimeString());
-      //             }
-      //           });
-      //         }
-      //       }).fail(function() {
-      //         console.log("error getting location");
-      //       });
-      //     }
-
-      //     // Error callback
-
-      //     function onWeatherError(error) {
-      //       console.log(
-      //         "code: " + error.code + "\n" + "message: " + error.message + "\n"
-      //       );
-      //     }
-    }
+   
   },
 
   data() {
@@ -144,8 +99,13 @@ export default {
   },
 
   methods: {
+
     addDistrict() {
-      //doc 類似post把資料加到 gigidata
+
+      if (this.msg === "") {
+        alert("未輸入文字");
+      } else {
+        //doc 類似post把資料加到 gigidata
       db.collection("gigidata")
         .add({
           msg: this.msg,
@@ -162,16 +122,24 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
+        
+        //加入元素到第一個位置
+        this.itemList.unshift({
+          msg: this.msg,
+          time: this.$moment().format("YYYY-MM-DD hh:mm:ss")
+        });
+      }
+      
 
       //參考 : https://www.oxxostudio.tw/articles/201905/firebase-firestore.html
-      var ref = db.collection("gigidata");
+      // var ref = db.collection("gigidata");
 
-      ref.get().then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          console.log(doc.id, doc.data());
-          
-        });
-      });
+      // ref.get().then(querySnapshot => {
+      //   querySnapshot.forEach(doc => {
+      //     console.log(doc.id, doc.data());
+
+      //   });
+      // });
     },
 
     axios() {
@@ -205,17 +173,17 @@ export default {
         });
 
         //將發文資料存於gigidata
-        axios
-          .post("http://localhost:3000/gigidata", {
-            msg: this.msg,
-            time: this.$moment().format("YYYY-MM-DD hh:mm:ss")
-          })
-          .then(function(response) {
-            console.log(response);
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
+        // axios
+        //   .post("http://localhost:3000/gigidata", {
+        //     msg: this.msg,
+        //     time: this.$moment().format("YYYY-MM-DD hh:mm:ss")
+        //   })
+        //   .then(function(response) {
+        //     console.log(response);
+        //   })
+        //   .catch(function(error) {
+        //     console.log(error);
+        //   });
 
         this.msg = "";
       }
