@@ -18,6 +18,7 @@ Vue.component(Cell.name, Cell);
 Vue.component(Checklist.name, Checklist);
 Vue.config.productionTip = false
 
+
 import VueCordova from 'vue-cordova'
 Vue.use(VueCordova)
 if (window.location.protocol === 'file:' || window.location.port === '3000') {
@@ -26,6 +27,9 @@ if (window.location.protocol === 'file:' || window.location.port === '3000') {
   cordovaScript.setAttribute('src', 'cordova.js')
   document.body.appendChild(cordovaScript)
 }
+
+
+
 
 
 
