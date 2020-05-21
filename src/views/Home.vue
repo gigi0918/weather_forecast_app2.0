@@ -5,7 +5,10 @@
 
     <div class="weather">
       <!-- <p id="pic"></p> -->
-      <img class="pic" src="../assets/w5.png" />
+      <img v-if="type === 'Sunny'" class="pic" src="../assets/w1.png" />      
+      <img v-else-if="type === 'Rain'" class="pic" src="../assets/w5.png">
+      <img v-else-if="type === 'Mist'" class="pic" src="../assets/w4.png">
+      <img v-else class="pic" src="../assets/w2.png" />   
       <p id="description" class="description"></p>
       <p id="time2"></p>
       <p id="temp"></p>
@@ -117,8 +120,10 @@ export default {
               $("#wind").text("風速 : " + results.wind.speed);
               $("#humidity").text("濕度 : " + results.main.humidity);
               $("#visibility").text("天氣 : " + results.weather[0].main);
-
-              $("#pic").attr("../assets/w5.png");
+              
+              //天氣圖變換
+              self.type = results.weather[0].main
+            //  / $("#pic").attr("../assets/w5.png");
 
               //https://blog.csdn.net/fanrenxiang/article/details/80531649
               //(results.dt)*1000 將原本10位的秒级别的時間戳換成13位的秒级别的時間戳
@@ -201,7 +206,8 @@ export default {
     return {
       msg: "",
       itemList: [],
-      time: ""
+      time: "",
+      type : 'A'
     };
   },
 
