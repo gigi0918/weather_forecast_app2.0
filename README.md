@@ -4,13 +4,18 @@
 <kbd>Ctrl</kbd>+<kbd>x</kbd> 刪除此行  
 <kbd>Ctrl</kbd>+<kbd>`</kbd> 終端機  
 <kbd>shift</kbd>+<kbd>Ctrl</kbd>+<kbd>F</kbd> 搜尋關鍵字  
-<kbd>shift</kbd>+<kbd>Ctrl</kbd>+<kbd>E</kbd> 顯示所有資料夾
+<kbd>shift</kbd>+<kbd>Ctrl</kbd>+<kbd>E</kbd> 顯示所有資料夾 Alt + Shift + F
 
 
 
-## 發文區 [^placeholder]應用
+## 發文區 placeholder<sup>[1](user_input_prompts)</sup>應用
+<!-- 
+此腳註在github上不適用
+[^placeholder]
 [^placeholder]:在發文區內，顯示使用者輸入提示
 
+<a name="myfootnote1">1</a>: Footnote content goes here
+<sup>[1](在發文區內，顯示使用者輸入提示)</sup> -->
 ```
 <textarea placeholder="請輸入內容" name="user_text" v-model="msg" cols="50" rows="10"></textarea>
 ```

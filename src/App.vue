@@ -11,11 +11,9 @@
 <script>
 
 import Vue from 'vue'
+//引入全部組件
 import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.css';
-
-
-
 Vue.use(MintUI);
 // 按需引入部分组件
 

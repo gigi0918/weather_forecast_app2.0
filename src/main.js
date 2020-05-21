@@ -3,6 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Mint from 'mint-ui';
+
+
+// //jQuery
+//  import jQuery from 'jquery'
+//  window.$ = window.jQuery = jQuery
 // 导入bootstrap样式
 import 'bootstrap/dist/css/bootstrap.css'
 // //导入自定义样式
