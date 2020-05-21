@@ -1,3 +1,7 @@
+## 成果展現
+
+<img src="assets/pic.jpg" >
+
 ## VS常用快捷鍵
 
 <kbd>Ctrl</kbd>+<kbd>/</kbd> 註解 (選定及取消)  

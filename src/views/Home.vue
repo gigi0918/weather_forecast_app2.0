@@ -323,7 +323,7 @@ export default {
 
   position: static;
   margin: auto;
-  width: 60%;
+  width: 275px;
 	height: 200px; 
   box-shadow: 0 10px 10px rgba(0,0,0,.5);
 	border-radius: 25px;/*讓框框的角變圓*/
@@ -341,45 +341,53 @@ export default {
   position: absolute;
   top: 5%;
   left: 5%;
+  font-size: 90%;
 }
 #visibility {
   position: absolute;
   left: 5%;
   top: 20%;
+  font-size: 90%;
 }
 #time2 {
   position: absolute;
   bottom: 5%;
   right: 5%;
+  font-size: 80%;
   
  }
 #temp { 
   position: absolute;
   top: 50%;
-  right: 15%;
-  font-size: 32px;
+  right: 5%;
+  font-size: 25px;
   color:rgb(104, 165, 226);
+  
 }
 #wind {
   position: absolute;
   top: 25%;
   right: 5%;
+  font-size: 70%;
 }
 #humidity {
   position: absolute;
   top: 35%;
   right: 5%;
+  font-size: 70%;
 }
 
 #sunrise {
   position: absolute;
   top: 5%;
   right: 5%;
+  font-size: 70%;
 }
 #sunset {
   position: absolute;
   top: 15%;
   right: 5%;
+  font-size: 70%;
 }
 
 .commit {
