@@ -35,10 +35,6 @@ if (window.location.protocol === 'file:' || window.location.port === '3000') {
 
 
 
-
-
-
-
 new Vue({
   router,
   store,
