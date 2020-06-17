@@ -1,6 +1,6 @@
 ## 成果展現
 
-<img src="src/assets/pic.jpg" >
+<img src="src/assets/pic.jpg"  width=50% >
 
 ## VS常用快捷鍵
 
