@@ -1,96 +1,31 @@
-## 成果展現
+# Weather forecast app
 
-<img src="src/assets/pic.jpg"  width=50% >
+## 專案目的
+- 結合vue.js和cordova，製作天氣預報app
+- 熟悉開發流程與架構
 
-## VS常用快捷鍵
+## 軟體功能
+- 即時顯示所在地天氣
+- 討論區
 
-<kbd>Ctrl</kbd>+<kbd>/</kbd> 註解 (選定及取消)  
-<kbd>Ctrl</kbd>+<kbd>x</kbd> 刪除此行  
-<kbd>Ctrl</kbd>+<kbd>`</kbd> 終端機  
-<kbd>shift</kbd>+<kbd>Ctrl</kbd>+<kbd>F</kbd> 搜尋關鍵字  
-<kbd>shift</kbd>+<kbd>Ctrl</kbd>+<kbd>E</kbd> 顯示所有資料夾 
-<kbd>shift</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> 自動排版 
+--- 
+### 安裝Hybrid App
+- [詳細文件](./Docs/InstallApp_Q&A.md)
 
+### 專案開發及測試
+- [詳細文件](./Docs/FrontendDev.md)
 
+---
+## 使用之套件
+### Vue.js
+- 說明 : 
+    1. 能快速搭建好一個SPA的網頁
+    2. 各個模版間的的角色定位明確
 
+### Cordova
+- 說明 : 將網頁轉換為手機軟體之套件，除了可於專案中加入官方插件外，亦可使用其社群之第三方插件。例如提供網路連線、開啟相機照相之功能。
+- [官方網站](https://cordova.apache.org)
 
-## 發文區 placeholder<sup>[1](user_input_prompts)</sup>應用
-<!-- 
-此腳註在github上不適用
-[^placeholder]
-[^placeholder]:在發文區內，顯示使用者輸入提示
-
-<a name="myfootnote1">1</a>: Footnote content goes here
-<sup>[1](在發文區內，顯示使用者輸入提示)</sup> -->
-```
-<textarea placeholder="請輸入內容" name="user_text" v-model="msg" cols="50" rows="10"></textarea>
-```
-## Toast的應用 
-
-安裝介紹:[mint-ui](https://mint-ui.github.io/#!/zh-cn)
-
-在src/main.js引入
-```
-// 引入全部组件
-import Vue from 'vue';
-import Mint from 'mint-ui';
-Vue.use(Mint);
-// 按需引入部分组件
-import { Cell, Checklist } from 'mint-ui';
-Vue.component(Cell.name, Cell);
-Vue.component(Checklist.name, Checklist);
-```
-
-在src/App.vue引入
-```
-import Vue from 'vue'
-//引入全部組件
-import MintUI from 'mint-ui';
-import 'mint-ui/lib/style.css';
-Vue.use(MintUI);
-```
-
-在src/view/Home.vue引入
-```
-import { Toast } from "mint-ui";
-```
-
-即可使用
-```
-Toast({
-        message: "發文成功",
-        position: "center" /*位置*/,
-        duration: 4000
-    });
-```
-
-## 網頁切換 Home <-> about
-
-確認在src/router/index.js中有此路徑
-```
-Vue.use(VueRouter)
-
-  const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
-```
-在src/view/Home.vue使用，即可切換至about.vue之頁面
-```
-<router-link to="/about">About</router-link>
-```
-
-## CSS
-
-|語法|概念|應用|
-|:--:|:--:|:--:|
-|footer|置底|about的連結|
-|position|定位|發佈時間的位置|
+### Capacitor
+- 說明 : 將網頁轉換為手機軟體之套件，持續更新，將可能取代Cordova的地位。
+- [官方網站](https://capacitorjs.com)
