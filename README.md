@@ -35,7 +35,7 @@
     2. [vue-axios](https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html)：API運用
 - component & plugin 未來方向
     1. [vue-i18n](https://kazupon.github.io/vue-i18n/introduction.html#%F0%9F%A5%89-bronze) : 讓App國際化，多國語系套件
-    2. [iView modal] (https://github.com/iview/iview) : 標準對對話框
+    2. [iView modal](https://github.com/iview/iview) : 標準對對話框
     
 
 ### Cordova
@@ -50,6 +50,5 @@
 
 ## Troble shooting
 
-1. [Android 權限問題](./Docs/AndroidAuthority.md)
-2. [Android SDK/Gradle]() 
-3. 
+  1. [Android 權限問題](./Docs/AndroidAuthority.md)
+  2. [Android SDK/Gradle]() 
