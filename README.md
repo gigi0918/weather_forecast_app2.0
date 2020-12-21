@@ -51,4 +51,4 @@
 ## Troble shooting
 
   1. [Android 權限問題](./Docs/AndroidAuthority.md)
-  2. [Android SDK/Gradle]() 
+  2. [Android studio SDK/Gradle](./Docs/Androidstudio.md) 
