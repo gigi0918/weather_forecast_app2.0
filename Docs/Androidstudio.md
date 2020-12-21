@@ -3,7 +3,8 @@
 ## SDK
 
 Step1:點選右上角的 SDK Ｍanager 
-<img src="./assets/SDK.png">   
+
+<P Align=center><img src="./assets/SDK.png"  width=70%> </p>
 
 step2：選擇App支援SDK版本，並下載
 <img src="./assets/SDK1.png">
