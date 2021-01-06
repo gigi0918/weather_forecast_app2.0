@@ -14,7 +14,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cordova-android": "^8.1.0",
     "cordova-plugin-device": "^2.0.3",
     "cordova-plugin-file": "^6.0.2",
